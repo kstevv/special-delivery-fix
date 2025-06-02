@@ -35,7 +35,7 @@ export default function EventsPage() {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
         <h1 className="text-black dark:text-white text-4xl font-bold">Events</h1>
 
-        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4 mb-2">
           {/* Location Filter */}
           <select
             value={locationFilter}

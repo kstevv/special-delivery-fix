@@ -30,7 +30,7 @@ export default function Hero() {
         </p>
         <Link
           href="/events"
-          className="inline-block bg-[#3ea6ff] text-white text-white text-sm font-bold px-4 py-2 rounded-md transition focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-0"
+          className="inline-block bg-[#0071e3] text-white text-sm font-bold px-4 py-2 rounded-md hover:bg-blue-600 transition"
         >
           Buy Tickets
         </Link>

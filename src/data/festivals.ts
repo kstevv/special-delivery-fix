@@ -6,7 +6,7 @@ const festivals = [
       location: "Austin, TX",
       image: "/images/illfest.jpg",
       ticketUrl: "https://www.illfest.com/",
-      description: "Florida's biggest bass music festival returns."
+      description: "ILLfest Music and Street Art Festival Returns for its 8th edition in 2026."
     },
     {
       id: 2,
@@ -32,8 +32,8 @@ const festivals = [
         date: "2026-1-31",
         location: "Houston, TX",
         image: "/images/toxic-winter.jpg",
-        ticketUrl: "https://example.com/tickets/desert-bloom",
-        description: "A three-day desert rave under the stars."
+        ticketUrl: "https://www.facebook.com/events/1018296902672882/",
+        description: "Toxic Winter Music Festival"
       },
       {
         id: 4,
@@ -42,7 +42,7 @@ const festivals = [
         location: "Austin, TX",
         image: "/images/wicked-oaks.jpg",
         ticketUrl: "https://wickedoaksfest.com/?fbclid=IwY2xjawKpv8xleHRuA2FlbQIxMABicmlkETF4aUVCYVZGamE0Unc0U3ZqAR7eOpz5UlEutmRoud50focKfuMBr1HX_rZZ1uNJhSLSQzZg7xl_B4j839epcg_aem_cfEqxdcviNGlk9NBzb46vA",
-        description: "A three-day desert rave under the stars."
+        description: "Wicked Oaks Festival 2025 in Austin, Texas."
       },
     
   ];
