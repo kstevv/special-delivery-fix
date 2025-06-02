@@ -18,7 +18,7 @@ export default function Home() {
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">{section.title}</h2>
         {section.link && (
-          <a href={section.link} className="text-black dark:text-white font-medium text-[1rem] md-text[1.2rem]">
+          <a href={section.link} className="text-black dark:text-white font-medium text-[1.2rem]">
             View All
           </a>
         )}

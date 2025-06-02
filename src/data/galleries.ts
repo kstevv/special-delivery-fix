@@ -1,42 +1,52 @@
 const gallery = [
+    
     {
-      id: 1,
       title: "iLLFest",
       date: "2025-05-31",
       location: "Austin, TX",
       image: "/images/illfest.jpg",
-      ticketUrl: "https://www.illfest.com/",
-      description: "Florida's biggest bass music festival returns."
+      description: "Florida's biggest bass music festival returns.",
+      slug: "illfest",
+      images: [
+      "/images/gallery/illfest/illfest1.jpg",
+      "/images/gallery/illfest/illfest2.jpg",
+      "/images/gallery/illfest/illfest3.jpg",
+      "/images/gallery/illfest/illfest4.jpg",
+      "/images/gallery/illfest/illfest5.jpg",
+      "/images/gallery/illfest/illfest6.jpg",
+      "/images/gallery/illfest/illfest7.jpg",
+      "/images/gallery/illfest/illfest8.jpg",
+      "/images/gallery/illfest/illfest9.jpg",
+      "/images/gallery/illfest/illfest10.jpg",
+      ],
     },
     {
-      id: 2,
       title: "Freeky Deeky",
       date: "2025-10-31",
       location: "Houston, TX",
       image: "/images/freeky-deeky.jpg",
-      ticketUrl: "https://freakydeaky.com/",
-      description: "A three-day desert rave under the stars."
+      description: "A three-day desert rave under the stars.",
+      slug: "freeky-deeky",
     },
     {
-        id: 3,
         title: "Collapse",
         date: "2025-12-31",
         location: "Dallas, TX",
         image: "/images/collapse.jpg",
-        ticketUrl: "https://example.com/tickets/forbidden-kingdom",
-        description: "Florida's biggest bass music festival returns."
+        description: "Florida's biggest bass music festival returns.",
+        slug: "collapse",
       },
       {
-        id: 4,
         title: "Toxic Winter",
         date: "2026-01-31",
         location: "Houston, TX",
         image: "/images/toxic-winter.jpg",
-        ticketUrl: "https://example.com/tickets/desert-bloom",
-        description: "A three-day desert rave under the stars."
+        description: "A three-day desert rave under the stars.",
+        slug: "toxic-winter",
       },
-    
+
   ];
+  
   
   export default gallery;
   

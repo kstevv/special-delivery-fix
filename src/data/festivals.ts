@@ -1,6 +1,5 @@
 const festivals = [
     {
-      id: 1,
       title: "iLLFest",
       date: "2025-05-31",
       location: "Austin, TX",
@@ -9,7 +8,6 @@ const festivals = [
       description: "ILLfest Music and Street Art Festival Returns for its 8th edition in 2026."
     },
     {
-      id: 2,
       title: "Freeky Deeky",
       date: "2025-10-31",
       location: "Houston, TX",
@@ -18,7 +16,6 @@ const festivals = [
       description: "A three-day desert rave under the stars."
     },
     {
-        id: 3,
         title: "Collapse",
         date: "2025-12-31",
         location: "Dallas, TX",
@@ -27,7 +24,6 @@ const festivals = [
         description: "Collapse Music Festival"
       },
       {
-        id: 4,
         title: "Toxic Winter",
         date: "2025-01-31",
         location: "Houston, TX",
@@ -36,7 +32,6 @@ const festivals = [
         description: "Toxic Winter Music Festival"
       },
       {
-        id: 5,
         title: "Wicked Oaks",
         date: "2025-10-25",
         location: "Austin, TX",

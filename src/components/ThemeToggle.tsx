@@ -24,7 +24,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label="Toggle Dark Mode"
-      className="text-black dark:text-white"
+      className="text-black dark:text-white block py-2 px-2 text-lg transition rounded"
     >
       {isDark ? <Sun size={24} /> : <Moon size={24} />}
     </button>
