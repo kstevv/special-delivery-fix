@@ -14,7 +14,7 @@ export default function Footer() {
         <p className="text-gray-400 mb-6">
           Subscribe to get updates on events, releases, and exclusive offers.
         </p>
-        <form className="flex w-full max-w-lg max-w-s-[95%] mx-auto">
+        <form className="flex w-full max-w-lg mx-auto">
         <input
   type="email"
   placeholder="Your email"
