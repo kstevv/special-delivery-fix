@@ -42,7 +42,7 @@ const events = [
     {
         title: "Galantis",
         date: "2025-08-31",
-        location: "Los Angeles, CA",
+        location: "Austin, TX",
         image: "/images/galantis-atx-25.jpg",
         description: "Disco Presents x Special Delivery Presents x RealMusic Events present GALANTIS at The Concourse Project on 8/31/25",
         ticketUrl: "https://wl.seetickets.us/event/Galantis-at-The-Concourse-Project/645108?afflky=TheConcourseProject&fbclid=IwY2xjawKps21leHRuA2FlbQIxMABicmlkETFJRVA0TUc5V1ZVM0VGQVFtAR5-yTuM_8k0JsI5_nPAn5uxt-dnQ3M2t51uO-asj0GF_IWUe29YJR3Hi4tF3Q_aem_zdqZ1MyS9B1Kf8MAbQs_ow"

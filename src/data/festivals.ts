@@ -29,14 +29,14 @@ const festivals = [
       {
         id: 4,
         title: "Toxic Winter",
-        date: "2026-1-31",
+        date: "2025-01-31",
         location: "Houston, TX",
         image: "/images/toxic-winter.jpg",
         ticketUrl: "https://www.facebook.com/events/1018296902672882/",
         description: "Toxic Winter Music Festival"
       },
       {
-        id: 4,
+        id: 5,
         title: "Wicked Oaks",
         date: "2025-10-25",
         location: "Austin, TX",

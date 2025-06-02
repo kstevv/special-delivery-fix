@@ -1,31 +1,15 @@
-'use client';
-import EventCard from "../../components/EventCard";
-import galleries from '../../data/galleries';
-
+import EventCard from '../../components/EventCard';
+import events from '../../data/galleries';
 
 export default function GalleryPage() {
   return (
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <h1 className="text-4xl font-bold text-black dark:text-white mb-8">Gallery</h1>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {/* Example images — replace with real ones later */}
-          {[
-            '/images/illfest.jpg',
-            '/images/freeky-deeky.jpg',
-            '/images/collapse.jpg',
-            '/images/toxic-winter.jpg',
-            '/images/wicked-oaks.jpg',
-          ].map((src, index) => (
-            <div key={index} className="w-full h-80 relative rounded-lg overflow-hidden">
-              <img
-                src={src}
-                alt={`Gallery image ${index + 1}`}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          ))}
-        </div>
+    <div className="px-6 py-12 max-w-7xl mx-auto">
+      <h1 className="text-4xl font-bold text-black dark:text-white mb-8">Gallery</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {events.map((event, index) => (
+          <EventCard key={index} event={event} variant="gallery" />
+        ))}
       </div>
+    </div>
   );
 }

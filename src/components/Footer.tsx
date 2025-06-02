@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="bg-black text-white text-center py-6 mt-12">
         <div className="max-w-7xl mx-auto text-center">
         {/* Newsletter Signup */}
-        <h2 className="text-2xl font-bold mb-4">Connect With Us</h2>
+        <h2 className="text-2xl font-bold mb-2">Connect With Us</h2>
         <p className="text-gray-400 mb-6">
           Subscribe to get updates on events, releases, and exclusive offers.
         </p>

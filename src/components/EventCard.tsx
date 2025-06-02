@@ -18,7 +18,7 @@ export default function EventCard({
   buttonLabel = 'Buy Tickets',
   variant = 'default',
 }: EventCardProps) {
-  const formattedDate = new Date(event.date).toLocaleDateString(undefined, {
+  const formattedDate = new Date(event.date + 'T00:00:00').toLocaleDateString(undefined, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -27,32 +27,36 @@ export default function EventCard({
   const cardContent = (
     <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200">
       <img src={event.image} alt={event.title} className="w-full h-80 object-cover" />
-      <div className="p-4">
-        {/* Default + Festival + Gallery Title */}
-        <h3 className="text-lg font-bold text-gray-900 dark:text-white">{event.title}</h3>
-
-        {/* Date (Default & Gallery only) */}
-        {(variant === 'default' || variant === 'gallery') && (
+      
+      {variant === 'gallery' && (
+        <div className="p-4">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white">{event.title}</h3>
           <p className="text-sm text-gray-600 dark:text-gray-400">{formattedDate}</p>
-        )}
+        </div>
+      )}
 
-        {/* Location (Default only) */}
-        {variant === 'default' && (
-          <p className="text-sm text-gray-600 dark:text-gray-400">{event.location}</p>
-        )}
+      {variant !== 'gallery' && (
+        <div className="p-4">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white">{event.title}</h3>
 
-        {/* Description (Festival only) */}
-        {variant === 'festival' && (
-          <p className="mt-2 text-gray-800 dark:text-gray-400">{event.description}</p>
-        )}
+          {variant === 'default' && (
+            <>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{formattedDate}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{event.location}</p>
+            </>
+          )}
 
-        {/* Button (Default only) */}
-        {variant === 'default' && (
-          <span className="mt-4 inline-block bg-[#0071e3] font-bold text-white px-4 py-2 rounded-md hover:bg-blue-600 transition">
-            {buttonLabel}
-          </span>
-        )}
-      </div>
+          {variant === 'festival' && (
+            <p className="text-gray-800 dark:text-gray-200">{event.description}</p>
+          )}
+
+          {variant === 'default' && (
+            <span className="mt-4 inline-block bg-[#0071e3] text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+              {buttonLabel}
+            </span>
+          )}
+        </div>
+      )}
     </div>
   );
 

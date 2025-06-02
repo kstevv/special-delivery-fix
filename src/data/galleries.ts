@@ -1,4 +1,4 @@
-const galleries = [
+const gallery = [
     {
       id: 1,
       title: "iLLFest",
@@ -29,7 +29,7 @@ const galleries = [
       {
         id: 4,
         title: "Toxic Winter",
-        date: "2026-1-31",
+        date: "2026-01-31",
         location: "Houston, TX",
         image: "/images/toxic-winter.jpg",
         ticketUrl: "https://example.com/tickets/desert-bloom",
@@ -38,5 +38,5 @@ const galleries = [
     
   ];
   
-  export default galleries;
+  export default gallery;
   
