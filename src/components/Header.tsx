@@ -35,14 +35,14 @@ export default function Header() {
         <>
           <div className="fixed inset-0 bg-black bg-opacity-50 z-40 sm:hidden" onClick={closeMenu} />
           <FocusTrap>
-            <div className="fixed top-0 right-0 h-screen w-3/4 max-w-xs bg-white dark:bg-black px-6 py-8 pt-12 space-y-6 text-lg z-50 sm:hidden">
+            <div className="fixed top-0 right-0 h-screen w-3/4 max-w-xs bg-white dark:bg-black px-6 py-8 pt-12 flex flex-col space-y-6 text-lg z-50 sm:hidden">
               <button onClick={closeMenu} className="absolute top-4 right-4 text-black dark:text-white">
                 <X size={28} />
               </button>
-              <Link href="/events" onClick={closeMenu}>Events</Link>
-              <Link href="/gallery" onClick={closeMenu}>Gallery</Link>
-              <Link href="/about" onClick={closeMenu}>About</Link>
-              <Link href="/contact" onClick={closeMenu}>Contact</Link>
+              <Link href="/events" onClick={closeMenu} className="block text-black dark:text-white">Events</Link>
+              <Link href="/gallery" onClick={closeMenu} className="block text-black dark:text-white">Gallery</Link>
+              <Link href="/about" onClick={closeMenu} className="block text-black dark:text-white">About</Link>
+              <Link href="/contact" onClick={closeMenu} className="block text-black dark:text-white">Contact</Link>
               <ThemeToggle />
             </div>
           </FocusTrap>
