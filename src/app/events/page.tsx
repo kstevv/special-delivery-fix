@@ -45,7 +45,7 @@ export default function EventsPage() {
           {/* Mobile Filter Button */}
           <button
             onClick={() => setShowFilters(!showFilters)}
-            className="lg:hidden text-sm px-3 py-2 text-white bg-[#0071e3] px-4 py-2 rounded-md text-sm font-bold transition"
+            className="lg:hidden text-sm px-3 py-2 text-white bg-[#0071e3] px-4 py-2 rounded-md text-sm font-bold transition hover:bg-blue-600"
           >
             {showFilters ? 'Close' : 'Filter'}
           </button>
@@ -122,7 +122,7 @@ export default function EventsPage() {
                 setMonthFilter('All');
                 setSearch('');
               }}
-              className="text-white bg-[#0071e3] px-4 py-2 rounded-md text-sm font-bold transition"
+              className="text-white bg-[#0071e3] px-4 py-2 rounded-md text-sm font-bold transition hover:bg-blue-600"
             >
               Reset
             </button>
@@ -202,7 +202,7 @@ export default function EventsPage() {
                 setMonthFilter('All');
                 setSearch('');
               }}
-              className="text-white bg-[#0071e3] px-4 py-2 rounded-md text-sm font-bold transition self-center"
+              className="text-white bg-[#0071e3] px-4 py-2 rounded-md text-sm font-bold transition self-center hover:bg-blue-600"
             >
               Reset
             </button>

@@ -46,7 +46,7 @@ export default function EventCard({
         )}
 
         {variant === 'default' && (
-          <span className="mt-4 inline-block bg-[#0071e3] text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+          <span className="mt-4 inline-block bg-[#0071e3] text-white font-bold px-4 py-2 rounded hover:bg-blue-600 transition">
             {buttonLabel}
           </span>
         )}

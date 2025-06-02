@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Hero />
       {[
-  { title: "Upcoming Events", link: "/events", data: events, buttonLabel: "Buy Tickets", variant: "default" },
+  { title: "Events", link: "/events", data: events, buttonLabel: "Buy Tickets", variant: "default" },
   { title: "Our Festivals", link: null, data: festivals, buttonLabel: "More Info", variant: "festival" },
   { title: "Gallery", link: "/gallery", data: galleries, variant: "gallery" },
 ].map((section, index) => (

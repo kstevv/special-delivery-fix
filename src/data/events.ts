@@ -37,7 +37,7 @@ const events = [
       location: "Austin, TX",
       image: "/images/muzz-atx-25.jpg",
       description: "Special Delivery Presents: Muzz @ Vulcan Gas Company on 8/29/25",
-      ticketUrl: "www.etix.com/ticket/p/40220978/special-delivery-presentsmuzz-austin-vulcan-gas-co-sd-presents?eventref=fb_oea&fbclid=IwY2xjawKpswFleHRuA2FlbQIxMABicmlkETFJRVA0TUc5V1ZVM0VGQVFtAR68lyTFULc0aFKxj4LgWI5P_ayUojnlswfM-3zRoZ16Shi5t34rbLJ_06T8RA_aem_svIRi1keAZpnpQ0yIMJACg"
+      ticketUrl: "https://www.etix.com/ticket/p/40220978/special-delivery-presentsmuzz-austin-vulcan-gas-co-sd-presents?eventref=fb_oea&fbclid=IwY2xjawKpswFleHRuA2FlbQIxMABicmlkETFJRVA0TUc5V1ZVM0VGQVFtAR68lyTFULc0aFKxj4LgWI5P_ayUojnlswfM-3zRoZ16Shi5t34rbLJ_06T8RA_aem_svIRi1keAZpnpQ0yIMJACg"
     },
     {
         title: "Galantis",
