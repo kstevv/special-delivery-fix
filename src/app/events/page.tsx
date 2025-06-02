@@ -42,7 +42,7 @@ export default function EventsPage() {
           <div className="relative">
             <Listbox value={locationFilter} onChange={setLocationFilter}>
               <div className="relative">
-                <Listbox.Button className="w-48 bg-white dark:bg-black border border-gray-700 text-black dark:text-white rounded-md py-2 pl-3 pr-10 text-left focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <Listbox.Button className="w-40 bg-white dark:bg-black border border-gray-700 text-black dark:text-white rounded-md py-2 pl-3 pr-10 text-left focus:outline-none focus:ring-2 focus:ring-blue-500">
                   {locationFilter}
                   <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                     <ChevronDown className="h-5 w-5 text-gray-400" />
@@ -71,7 +71,7 @@ export default function EventsPage() {
           <div className="relative">
             <Listbox value={monthFilter} onChange={setMonthFilter}>
               <div className="relative">
-                <Listbox.Button className="w-48 bg-white dark:bg-black border border-gray-700 text-black dark:text-white rounded-md py-2 pl-3 pr-10 text-left focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <Listbox.Button className="w-40 bg-white dark:bg-black border border-gray-700 text-black dark:text-white rounded-md py-2 pl-3 pr-10 text-left focus:outline-none focus:ring-2 focus:ring-blue-500">
                   {monthFilter === 'All' ? 'All Dates' : formatMonthYear(monthFilter)}
                   <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                     <ChevronDown className="h-5 w-5 text-gray-400" />
