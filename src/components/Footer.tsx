@@ -20,14 +20,14 @@ export default function Footer() {
   placeholder="Your email"
   value={email}
   onChange={(e) => setEmail(e.target.value)}
-  className={`flex-grow px-4 py-1 rounded-l-full bg-white dark:bg-black border ${
+  className={`flex-grow px-4 py-2 rounded-l-full bg-white dark:bg-black border ${
     email ? "border-blue-500" : "border-gray-700"
   } text-black dark:text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#0071e3] transition-colors duration-200`}
   required
 />
   <button
     type="submit"
-    className="px-4 py-1 bg-neutral-800 hover:bg-neutral-700 py-2 rounded-r-full border border-l-0 border-gray-700 text-white font-semibold transition"
+    className="px-4 py-2 bg-neutral-800 hover:bg-neutral-700 py-2 rounded-r-full border border-l-0 border-gray-700 text-white font-semibold transition"
   >
     Subscribe
   </button>
