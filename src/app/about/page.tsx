@@ -16,8 +16,6 @@ export default function AboutPage() {
 </svg>
 
 </div>
-
-        
         <p className="mb-6 text-lg leading-relaxed">
           SPECIAL DELIVERY PRESENTS brought to you by the founders of Collapse Dance Event, & ILLfest Music & Arts Festival! in Texas! We are here to bring Austin, Dallas, Houston, San Antonio, & more the best experiences in dance music! We work year round book to your favorite clubs like Vulcan Gas Company, Cedar Street, RBC Deep Ellum, Deep Ellum Art Co, Paper Tiger, Ayva Center, The HEB center, & more! We also bring you top notch festivals! year round, and we are so excited to be back! We will see you on the dance floor!
         </p>
