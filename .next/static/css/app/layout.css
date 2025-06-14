@@ -918,6 +918,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
+.bg-\[\#DADDE1\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(218 221 225 / var(--tw-bg-opacity));
+}
 .bg-opacity-100 {
   --tw-bg-opacity: 1;
 }
@@ -1246,6 +1250,11 @@ html {
   padding-right: 2.5rem;
 }
 
+.target\:bg-\[\#DADDE1\]:target {
+  --tw-bg-opacity: 1;
+  background-color: rgb(218 221 225 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-\[\#0071e3\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 113 227 / var(--tw-bg-opacity));
@@ -1322,6 +1331,11 @@ html {
 .focus\:ring-blue-500:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+}
+
+.active\:bg-\[\#DADDE1\]:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(218 221 225 / var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:border-gray-700) {
@@ -1412,6 +1426,11 @@ html {
 :is(.dark .dark\:hover\:bg-neutral-700:hover) {
   --tw-bg-opacity: 1;
   background-color: rgb(64 64 64 / var(--tw-bg-opacity));
+}
+
+:is(.dark .dark\:hover\:bg-\[\#DADDE1\]:hover) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(218 221 225 / var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:hover\:text-white:hover) {
