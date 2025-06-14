@@ -1,18 +1,21 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import FocusTrap from 'focus-trap-react';
 import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const closeMenu = () => setMenuOpen(false);
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
@@ -20,6 +23,14 @@ export default function Header() {
       document.body.style.overflow = '';
     };
   }, [menuOpen]);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
+
+  const logoSrc =
+    resolvedTheme === 'dark'
+      ? '/images/logos/SD_FullLogo_Dark.jpg'
+      : '/images/logos/SD_FullLogo_Light.jpg';
 
   const navLinks = [
     { href: '/events', label: 'Events' },
@@ -30,11 +41,20 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 h-16 bg-white dark:bg-black bg-opacity-100 backdrop-blur border-b border-gray-700">
+      <header className="sticky top-0 z-50 h-16 bg-white dark:bg-black bg-opacity-100 backdrop-blur border-b border-gray-200 dark:border-gray-700 shadow-sm">
         <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 h-full">
-          <Link href="/" className="text-xl font-bold text-black dark:text-white">
-            Special Delivery
+          <Link href="/" className="flex items-center">
+            {mounted && (
+              <Image
+                src={logoSrc}
+                alt="Special Delivery Logo"
+                width={112}
+                height={55}
+                priority
+              />
+            )}
           </Link>
+
           <div className="hidden sm:flex gap-4 text-black dark:text-white text-lg items-center">
             {navLinks.map((link) => (
               <Link
@@ -51,6 +71,7 @@ export default function Header() {
             ))}
             <ThemeToggle />
           </div>
+
           <button className="sm:hidden text-black dark:text-white" onClick={toggleMenu}>
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>

@@ -1,4 +1,4 @@
-import Hero from "../components/Hero";
+import HeroCarousel from '../components/HeroCarousel';
 import EventCard from "../components/EventCard";
 import events from "../data/events";
 import festivals from "../data/festivals";
@@ -7,7 +7,7 @@ import galleries from "../data/galleries";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <HeroCarousel />
       {[
   { title: "Events", link: "/events", data: events, buttonLabel: "Buy Tickets", variant: "default" },
   { title: "Our Festivals", link: null, data: festivals, buttonLabel: "More Info", variant: "festival" },

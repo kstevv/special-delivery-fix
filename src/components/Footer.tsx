@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="bg-black text-white text-center py-6 mt-12">
         <div className="max-w-7xl mx-auto text-center">
         {/* Newsletter Signup */}
-        <h2 className="text-2xl font-bold mb-2">Connect With Us</h2>
+        <h2 className="text-2xl font-bold mb-2">Stay Up To Date</h2>
         <p className="text-gray-400 mb-6">
           Subscribe to get updates on events, releases, and exclusive offers.
         </p>
@@ -36,14 +36,14 @@ export default function Footer() {
 
         {/* Social Icons */}
 <div className="mt-10 flex justify-center gap-6">
-  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+  <a href="https://www.facebook.com/specialdeliverypresents" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
     <Facebook className="text-gray-400 hover:text-white transition" />
   </a>
   <a href="https://www.instagram.com/specialdeliverytx/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
     <Instagram className="text-gray-400 hover:text-white transition" />
   </a>
   <a
-  href="https://x.com"
+  href="https://x.com/SDPresentsTX"
   target="_blank"
   rel="noopener noreferrer"
   aria-label="X"

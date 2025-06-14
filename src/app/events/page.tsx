@@ -122,7 +122,7 @@ export default function EventsPage() {
                 setMonthFilter('All');
                 setSearch('');
               }}
-              className="text-white bg-[#0071e3] px-4 py-2 rounded-md text-sm font-bold transition hover:bg-blue-600"
+              className="text-black dark:text-white bg-[#E2E5E9] dark:bg-neutral-800 px-4 py-2 rounded-md text-sm font-bold transition hover:bg-[#DADDE1] dark:hover:bg-neutral-700"
             >
               Reset
             </button>
@@ -202,7 +202,7 @@ export default function EventsPage() {
                 setMonthFilter('All');
                 setSearch('');
               }}
-              className="text-white bg-[#0071e3] px-4 py-2 rounded-md text-sm font-bold transition self-center hover:bg-blue-600"
+              className="text-black dark:text-white bg-[#E2E5E9] dark:bg-neutral-800 bg-neutral-800 px-6 py-2 rounded-md text-sm font-bold transition self-center hover:bg-[#DADDE1] dark:hover:bg-neutral-700"
             >
               Reset
             </button>

@@ -13,8 +13,10 @@
     "focus-trap-react": "^8.9.0",
     "lucide-react": "^0.263.1",
     "next": "13.5.11",
+    "next-themes": "^0.4.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "yet-another-react-lightbox": "^3.23.2"
   },
   "devDependencies": {
     "@types/node": "20.4.2",
