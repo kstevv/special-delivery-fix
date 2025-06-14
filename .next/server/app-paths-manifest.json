@@ -2,7 +2,7 @@
   "/page": "app/page.js",
   "/events/page": "app/events/page.js",
   "/contact/page": "app/contact/page.js",
+  "/gallery/[slug]/page": "app/gallery/[slug]/page.js",
   "/gallery/page": "app/gallery/page.js",
-  "/about/page": "app/about/page.js",
-  "/gallery/[slug]/page": "app/gallery/[slug]/page.js"
+  "/about/page": "app/about/page.js"
 }

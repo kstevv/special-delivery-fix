@@ -24,12 +24,12 @@ export default function ContactForm() {
   return (
     <section className="px-6 py-16 max-w-2xl mx-auto text-black dark:text-white">
     
-        <h1 className="text-4xl font-bold mb-6 text-center">Contact Us</h1>
+        <h1 className="text-4xl font-bold mb-6 text-center">Connect With Us</h1>
         <p className="text-center text-gray-800 dark:text-gray-200">
           Have questions, booking inquiries, or want to collaborate?</p>
           <p className="text-center text-gray-800 dark:text-gray-200">Drop us a message — we’d love to hear from you.
         </p>
-<div className="px-6 pt-6 max-w-2xl mx-auto">
+<div className="px-1 pt-6 max-w-2xl mx-auto">
       <div className="w-full max-w-2xl space-y-8">
         {submitted ? (
           <p className="text-center text-green-400">Thank you! Your message has been sent.</p>
