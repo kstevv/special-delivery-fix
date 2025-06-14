@@ -38,7 +38,7 @@ const events = [
     {
       title: "Freakazoid Robots",
       date: "2025-07-25",
-      location: "Austin, TX",
+      location: "Dallas, TX",
       venue: "SILO Dallas",
       image: "images/freakazoid-robots-dtx-25.jpg",
       description: "",

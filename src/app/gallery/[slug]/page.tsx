@@ -37,7 +37,7 @@ export default function GalleryDetailPage({ params }: PageProps) {
             key={idx}
             src={src}
             alt={`${gallery.title} photo ${idx + 1}`}
-            className="rounded-lg w-full h-64 object-cover cursor-pointer"
+            className="w-full h-80 object-cover rounded cursor-pointer"
             onClick={() => {
               setCurrentIndex(idx);
               setLightboxOpen(true);
