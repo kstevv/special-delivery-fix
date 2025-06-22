@@ -1,9 +1,0 @@
-{
-  "app/gallery/[slug]/GalleryLightboxWrapper.tsx -> ./GalleryLightbox": {
-    "id": "app/gallery/[slug]/GalleryLightboxWrapper.tsx -> ./GalleryLightbox",
-    "files": [
-      "static/css/_app-pages-browser_src_app_gallery_slug_GalleryLightbox_tsx.css",
-      "static/chunks/_app-pages-browser_src_app_gallery_slug_GalleryLightbox_tsx.js"
-    ]
-  }
-}
