@@ -1,12 +1,15 @@
 import { notFound } from 'next/navigation';
-import { Metadata } from 'next';
 import galleries from '../../../data/galleries';
 import GalleryLightboxWrapper from './GalleryLightboxWrapper';
-import BackButton from '../../../components/BackButton';
+import type { Metadata } from 'next';
 
-type Params = { slug: string };
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const gallery = galleries.find((g) => g.slug === params.slug);
   if (!gallery) return {};
 
@@ -16,15 +19,15 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   };
 }
 
-export default function GallerySlugPage({ params }: { params: Params }) {
+export default function GalleryPage({ params }: Props) {
   const gallery = galleries.find((g) => g.slug === params.slug);
   if (!gallery) return notFound();
 
   return (
     <main className="px-6 py-12 max-w-7xl mx-auto">
-      <div className="flex flex-wrap items-start justify-between gap-4 mb-10">
+      <div className="flex items-start justify-between flex-wrap gap-y-2 mb-6">
         <div>
-          <h1 className="text-4xl font-bold text-black dark:text-white mb-1">
+          <h1 className="text-4xl font-bold text-black dark:text-white">
             {gallery.title}
           </h1>
           <p className="text-gray-700 dark:text-gray-300">
@@ -36,10 +39,18 @@ export default function GallerySlugPage({ params }: { params: Params }) {
             })}
           </p>
         </div>
-        <BackButton />
+        <button
+          onClick={() => history.back()}
+          className="text-sm px-4 py-2 text-white bg-[#0071e3] rounded-md font-bold transition hover:bg-blue-600"
+        >
+          ← Back
+        </button>
       </div>
 
-      <GalleryLightboxWrapper images={gallery.images} title={gallery.title} />
+      <GalleryLightboxWrapper
+        images={gallery.images}
+        title={gallery.title}
+      />
     </main>
   );
 }
