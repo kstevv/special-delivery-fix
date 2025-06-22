@@ -53,7 +53,7 @@ export default function Home() {
         <section
           id={section.id}
           key={index}
-          className={`mt-16 ${section.id === 'gallery' ? 'mb-12' : ''}`}
+          className="mt-8"
           aria-labelledby={`${section.id}-heading`}
         >
           <div className="max-w-7xl mx-auto px-6">

@@ -1,3 +1,5 @@
+// File: src/app/gallery/[slug]/page.tsx
+
 import { notFound } from 'next/navigation';
 import galleries from '../../../data/galleries';
 import GalleryLightboxWrapper from './GalleryLightboxWrapper';
@@ -21,7 +23,7 @@ export async function generateMetadata({
 
 // Page component
 type Props = {
-  params: { slug: string }; // ✅ this avoids the PageProps error
+  params: { slug: string };
 };
 
 export default function GallerySlugPage({ params }: Props) {
@@ -30,9 +32,10 @@ export default function GallerySlugPage({ params }: Props) {
 
   return (
     <main className="px-6 py-12 max-w-7xl mx-auto">
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 gap-2">
+      {/* Header row with title, date, and back button */}
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
         <div>
-          <h1 className="text-4xl font-bold text-black dark:text-white">
+          <h1 className="text-2xl sm:text-3xl font-bold text-black dark:text-white">
             {gallery.title}
           </h1>
           <p className="text-gray-700 dark:text-gray-300">
@@ -45,12 +48,10 @@ export default function GallerySlugPage({ params }: Props) {
           </p>
         </div>
 
-        {/* Back button */}
-        <div className="self-start lg:self-center">
-          <BackButton />
-        </div>
+        <BackButton />
       </div>
 
+      {/* Gallery */}
       <GalleryLightboxWrapper images={gallery.images} title={gallery.title} />
     </main>
   );

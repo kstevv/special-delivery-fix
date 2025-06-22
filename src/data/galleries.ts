@@ -21,10 +21,10 @@ const gallery = [
       ],
     },
     {
-      title: "Freeky Deeky",
+      title: "Freeky Deaky",
       date: "2025-10-31",
       location: "Houston, TX",
-      image: "/images/festivals/freeky-deeky.jpg",
+      image: "/images/festivals/freeky-deaky.jpg",
       description: "A three-day desert rave under the stars.",
       slug: "freeky-deeky",
       images: [

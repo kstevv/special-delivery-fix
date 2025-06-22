@@ -24,10 +24,10 @@ const festivals = [
       description: "Three festival experiences in one wicked place. Worlds collide for three days of music, camping & art beneath the enchanted Texas skies."
     },
     {
-      title: "Freeky Deeky",
+      title: "Freeky Deaky",
       date: "2025-10-31",
       location: "Houston, TX",
-      image: "/images/festivals/freeky-deeky.jpg",
+      image: "/images/festivals/freeky-deaky.jpg",
       ticketUrl: "https://freakydeaky.com/",
       description: "An electronic dance music festival at Travis County Exposition Center in Austin, Texas "
     },
