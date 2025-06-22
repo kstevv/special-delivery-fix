@@ -53,7 +53,7 @@ export default function Home() {
         <section
           id={section.id}
           key={index}
-          className="mt-8"
+          className="mb-8"
           aria-labelledby={`${section.id}-heading`}
         >
           <div className="max-w-7xl mx-auto px-6">
