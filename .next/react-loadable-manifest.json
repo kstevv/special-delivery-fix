@@ -1,11 +1,9 @@
 {
   "app/gallery/[slug]/GalleryLightboxWrapper.tsx -> ./GalleryLightbox": {
-    "id": 5815,
+    "id": "app/gallery/[slug]/GalleryLightboxWrapper.tsx -> ./GalleryLightbox",
     "files": [
-      "static/css/fa3c9df904c3bd1c.css",
-      "static/chunks/63-e462f936bf81a398.js",
-      "static/chunks/695.37fe8fe318405c15.js",
-      "static/chunks/815.6dc4b9eb74d7b74e.js"
+      "static/css/_app-pages-browser_src_app_gallery_slug_GalleryLightbox_tsx.css",
+      "static/chunks/_app-pages-browser_src_app_gallery_slug_GalleryLightbox_tsx.js"
     ]
   }
 }

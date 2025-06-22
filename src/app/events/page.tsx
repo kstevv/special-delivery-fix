@@ -5,8 +5,6 @@ import { Listbox } from '@headlessui/react';
 import { ChevronDown } from 'lucide-react';
 import EventCard from '../../components/EventCard';
 import events from '../../data/events';
-import GalleryLightbox from '../../components/GalleryLightboxWrapper';
-
 
 // Helper functions
 const getMonth = (dateStr: string) => dateStr.slice(0, 7);
