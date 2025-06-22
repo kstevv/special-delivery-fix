@@ -35,7 +35,7 @@ export default function GalleryLightbox({ images, title }: Props) {
               src={img}
               alt={`${title} photo ${i + 1}`}
               fill
-              className="object-cover group-hover:opacity-80 transition"
+              className="object-cover transition"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             />
           </button>

@@ -4,5 +4,5 @@
   "/contact/page": "app/contact/page.js",
   "/page": "app/page.js",
   "/gallery/page": "app/gallery/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/events/page": "app/events/page.js"
 }
