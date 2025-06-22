@@ -1,52 +1,38 @@
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import galleries from '../../../data/galleries';
 import GalleryLightboxWrapper from './GalleryLightboxWrapper';
-import type { Metadata } from 'next';
+import BackButton from './BackButton';
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const gallery = galleries.find((g) => g.slug === params.slug);
   if (!gallery) return {};
-
   return {
     title: `${gallery.title} | Gallery | Special Delivery Presents`,
     description: `Photos from ${gallery.title} on ${gallery.date}. View the full gallery.`,
   };
 }
 
-export default function GalleryPage({ params }: Props) {
+export default function GallerySlugPage({ params }: { params: { slug: string } }) {
   const gallery = galleries.find((g) => g.slug === params.slug);
   if (!gallery) return notFound();
 
   return (
     <main className="px-6 py-12 max-w-7xl mx-auto">
-      <div className="flex items-start justify-between flex-wrap gap-y-2 mb-6">
-        <div>
-          <h1 className="text-4xl font-bold text-black dark:text-white">
-            {gallery.title}
-          </h1>
-          <p className="text-gray-700 dark:text-gray-300">
-            {new Date(gallery.date).toLocaleDateString(undefined, {
-              weekday: 'long',
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </p>
-        </div>
-        <button
-          onClick={() => history.back()}
-          className="text-sm px-4 py-2 text-white bg-[#0071e3] rounded-md font-bold transition hover:bg-blue-600"
-        >
-          ← Back
-        </button>
+      <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
+        <h1 className="text-4xl font-bold text-black dark:text-white">
+          {gallery.title}
+        </h1>
+        <BackButton />
       </div>
-
+      <p className="text-gray-700 dark:text-gray-300 mb-10">
+        {new Date(gallery.date).toLocaleDateString(undefined, {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })}
+      </p>
       <GalleryLightboxWrapper
         images={gallery.images}
         title={gallery.title}
