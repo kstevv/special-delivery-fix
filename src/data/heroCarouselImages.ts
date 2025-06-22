@@ -1,0 +1,81 @@
+export const desktopImages = [
+  {
+    src: '/images/carousel/wicked-oaks-25.jpg',
+    alt: 'Wicked Oaks Festival Poster',
+    title: '',
+    ticketUrl: 'https://wl.seetickets.us/event/Wicked-Oaks-2025/649630?afflky=WickedOaks',
+    websiteUrl: 'https://wickedoaksfest.com/',
+    showWebsiteButton: true,
+  },
+  {
+    src: '/images/carousel/galantis.jpg',
+    alt: 'Galantis Live Poster',
+    title: '',
+    ticketUrl: 'https://wl.seetickets.us/event/Galantis-at-The-Concourse-Project/645108?afflky=TheConcourseProject',
+    showWebsiteButton: false,
+  },
+  {
+    src: '/images/carousel/test.jpg',
+    alt: 'Test Artist Poster',
+    title: 'Some Bitch',
+    ticketUrl: 'https://wl.seetickets.us/event/Wicked-Oaks-2025/649630?afflky=WickedOaks',
+    websiteUrl: 'https://wickedoaksfest.com/',
+    showWebsiteButton: true,
+  },
+  {
+    src: '/images/carousel/test2.jpg',
+    alt: 'Tito Promo Poster',
+    title: 'Tito',
+    ticketUrl: 'https://wl.seetickets.us/event/Galantis-at-The-Concourse-Project/645108?afflky=TheConcourseProject',
+    showWebsiteButton: false,
+  },
+  {
+    src: '/images/carousel/test3.jpg',
+    alt: 'Event Promo Image',
+    title: '',
+    ticketUrl: 'https://wl.seetickets.us/event/Wicked-Oaks-2025/649630?afflky=WickedOaks',
+    websiteUrl: 'https://wickedoaksfest.com/',
+    showWebsiteButton: true,
+  },
+];
+
+export const mobileImages = [
+  {
+    src: '/images/festivals/wicked-oaks.jpg',
+    alt: 'Wicked Oaks Mobile Poster',
+    title: '',
+    ticketUrl: 'https://wl.seetickets.us/event/Wicked-Oaks-2025/649630?afflky=WickedOaks',
+    websiteUrl: 'https://wickedoaksfest.com/',
+    showWebsiteButton: true,
+  },
+  {
+    src: '/images/galantis-atx.jpg',
+    alt: 'Galantis ATX Poster',
+    title: '',
+    ticketUrl: 'https://wl.seetickets.us/event/Galantis-at-The-Concourse-Project/645108?afflky=TheConcourseProject',
+    showWebsiteButton: false,
+  },
+  {
+    src: '/images/carousel/test-mobile.jpg',
+    alt: 'Artist Test Mobile Promo',
+    title: 'some bitch',
+    ticketUrl: 'https://wl.seetickets.us/event/Wicked-Oaks-2025/649630?afflky=WickedOaks',
+    websiteUrl: 'https://wickedoaksfest.com/',
+    showWebsiteButton: true,
+  },
+  {
+    src: '/images/carousel/test2.jpg',
+    alt: 'Tito Poster Mobile',
+    title: 'tito',
+    ticketUrl: 'https://wl.seetickets.us/event/Galantis-at-The-Concourse-Project/645108?afflky=TheConcourseProject',
+    showWebsiteButton: false,
+  },
+  {
+    src: '/images/carousel/test3-mobile.jpg',
+    alt: 'Wicked Oaks Promo Mobile',
+    title: '',
+    ticketUrl: 'https://wl.seetickets.us/event/Wicked-Oaks-2025/649630?afflky=WickedOaks',
+    websiteUrl: 'https://wickedoaksfest.com/',
+    showWebsiteButton: true,
+  },
+];
