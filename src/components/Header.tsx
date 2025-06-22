@@ -58,7 +58,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={`px-2 py-2 transition rounded ${
-                  pathname.startsWith(link.href)
+                  (pathname || '').startsWith(link.href)
                     ? 'text-white bg-[#0071e3]'
                     : 'hover:bg-[#0071e3] dark:hover:bg-[#0071e3] hover:text-white'
                 }`}
