@@ -5,6 +5,7 @@ import { Listbox } from '@headlessui/react';
 import { ChevronDown } from 'lucide-react';
 import EventCard from '../../components/EventCard';
 import events from '../../data/events';
+import ScrollToTopButton from '../../components/ScrollToTopButton';
 
 // Helper functions
 const getMonth = (dateStr: string) => dateStr.slice(0, 7);
@@ -210,6 +211,7 @@ export default function EventsPage() {
           <EventCard key={index} event={event} variant="event" />
         ))}
       </div>
+      <ScrollToTopButton />
     </div>
   );
 }
