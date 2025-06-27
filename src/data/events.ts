@@ -27,7 +27,7 @@ const events = [
       ticketUrl: "https://wl.seetickets.us/event/Freakazoid-Robots-ft-Trivecta-MitiS-and-MORE-DALLAS/652647?afflky=SILO"
     },
     {
-      title: "jaenga",
+      title: "Jaenga",
       date: "2025-08-15",
       location: "Dallas, TX",
       venue: "Deep Ellum Art Co.",
@@ -45,7 +45,7 @@ const events = [
       ticketUrl: "https://wl.seetickets.us/event/ARMNHMR-AUSTIN/651286?afflky=DiscoDonnie"
     },
     {
-      title: "jaenga",
+      title: "Jaenga",
       date: "2025-08-16",
       location: "Austin, TX",
       venue: "Vulcan Gas Company",

@@ -2,6 +2,12 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { useRef } from 'react';
+import type { ControllerRef } from 'yet-another-react-lightbox';
+import GalleryLightboxWrapper from './GalleryLightboxWrapper';
+import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
+import BackButton from './BackButton';
+import { formatLocalDate } from '../lib/formatDate';
 import Lightbox from 'yet-another-react-lightbox';
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import 'yet-another-react-lightbox/styles.css';
@@ -16,9 +22,26 @@ interface GalleryDetailProps {
   };
 }
 
+function NextJsImage({ slide }: any) {
+  return (
+    <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+      <Image
+        src={slide.src}
+        alt={slide.alt || ''}
+        fill
+        style={{ objectFit: 'contain' }}
+        sizes="100vw"
+        priority
+      />
+    </div>
+  );
+}
+
 export default function GalleryDetail({ gallery }: GalleryDetailProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const lightboxRef = useRef<ControllerRef>(null);
+  
 
   const structuredData = {
     '@context': 'https://schema.org',
@@ -31,54 +54,97 @@ export default function GalleryDetail({ gallery }: GalleryDetailProps) {
     ),
   };
 
+  const slides = gallery.images.map((src) => ({
+  src,
+  width: 1200,
+  height: 800,
+  alt: `${gallery.title} photo`,
+}));
+
+
+
   return (
     <main className="px-6 py-12 max-w-7xl mx-auto" aria-labelledby="gallery-title">
-      <h1 id="gallery-title" className="text-3xl font-bold text-black dark:text-white mb-4">
-        {gallery.title}
-      </h1>
-      <p className="text-gray-600 dark:text-gray-400 mb-8">
-        {new Date(gallery.date).toLocaleDateString(undefined, {
-          weekday: 'long',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        })}
-      </p>
-
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-        {gallery.images.map((src, idx) => (
-          <button
-            key={idx}
-            onClick={() => {
-              setCurrentIndex(idx);
-              setLightboxOpen(true);
-            }}
-            className="relative w-full sm:h-[180px] h-24 rounded overflow-hidden cursor-pointer"
-            aria-label={`Open photo ${idx + 1} in lightbox`}
-          >
-            <Image
-              src={src.startsWith('/') ? src : `/${src}`}
-              alt={`${gallery.title} photo ${idx + 1}`}
-              fill
-              className="object-cover hover:opacity-90 transition"
-              sizes="(max-width: 768px) 50vw, 33vw"
-              priority={idx < 3}
-            />
-          </button>
-        ))}
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-black dark:text-white">
+            {gallery.title}
+          </h1>
+          <p className="text-gray-700 dark:text-gray-300">
+            {formatLocalDate(gallery.date)}
+          </p>
+        </div>
+        <BackButton />
       </div>
 
-      {lightboxOpen && (
-        <Lightbox
-          open={lightboxOpen}
-          close={() => setLightboxOpen(false)}
-          index={currentIndex}
-          slides={gallery.images.map((src) => ({
-            src: src.startsWith('http') ? src : `/${src}`,
-          }))}
-          plugins={[Thumbnails]}
-        />
-      )}
+      <GalleryLightboxWrapper
+        images={gallery.images}
+        title={gallery.title}
+        onImageClick={(i) => {
+          setCurrentIndex(i);
+          setLightboxOpen(true);
+        }}
+      />
+
+      <Lightbox
+        open={lightboxOpen}
+        close={() => setLightboxOpen(false)}
+        slides={slides}
+        index={currentIndex}
+        on={{
+          view: ({ index }) => setCurrentIndex(index),
+        }}
+        plugins={[Fullscreen, Thumbnails]}
+        controller={{ ref: lightboxRef }}
+        render={{
+          slide: NextJsImage,
+          thumbnail: ({ slide }) => (
+            <div className="border border-white/20 rounded-md shadow-sm overflow-hidden">
+              <Image
+                src={slide.src}
+                alt={slide.alt || ''}
+                width={120}
+                height={80}
+                className="object-cover rounded-md transition-transform duration-200 hover:scale-105"
+              />
+            </div>
+          ),
+          controls: () => (
+  <div className="absolute bottom-[20px] left-1/2 -translate-x-1/2 z-[9999] flex items-center gap-4 px-4 py-2 bg-black/70 rounded-md text-white text-sm shadow">
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        lightboxRef.current?.prev();
+      }}
+      aria-label="Previous slide"
+      className="cursor-pointer focus:outline-none focus:ring-0"
+    >
+      <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">
+        <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+      </svg>
+    </button>
+
+    <span className="min-w-[60px] text-center select-none">
+      {currentIndex + 1} / {slides.length}
+    </span>
+
+    <button 
+      onClick={(e) => {
+        e.stopPropagation();
+        lightboxRef.current?.next();
+      }}
+      aria-label="Next slide"
+      className="cursor-pointer focus:outline-none focus:ring-0"
+    >
+      <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">
+        <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+      </svg>
+    </button>
+  </div>
+),
+
+        }}
+      />
 
       <script
         type="application/ld+json"

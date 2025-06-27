@@ -20,7 +20,7 @@ export const desktopImages = [
     alt: 'Freakazoid Robots',
     title: '',
     ticketUrl: 'https://wl.seetickets.us/event/Freakazoid-Robots-ft-Trivecta-MitiS-and-MORE-DALLAS/652647?afflky=SILO',
-    showWebsiteButton: true,
+    showWebsiteButton: false,
   },
   {
     src: '/images/carousel/ydg-ws-dtx-25.jpg',
@@ -36,7 +36,7 @@ export const desktopImages = [
     title: '',
     description: '',
     ticketUrl: 'https://www.etix.com/ticket/p/85716283/jeanga-dream-machine-tour-atx-austin-vulcan-gas-co-sd-presents',
-    showWebsiteButton: true,
+    showWebsiteButton: false,
   },
 ];
 
@@ -72,9 +72,9 @@ export const mobileImages = [
     showWebsiteButton: false,
   },
   {
-    src: '/images/carousel/jaenga-mobile.jpg',
+    src: '/images/carousel/jaenga-mobile2.jpg',
     title: 'Jaenga',
-    description: 'Saturday, August 16 @ Vulcan Gas Company',
+    description: 'Saturday, Aug 16 @ Vulcan Gas Company',
     ticketUrl: 'https://www.etix.com/ticket/p/85716283/jeanga-dream-machine-tour-atx-austin-vulcan-gas-co-sd-presents',
     showWebsiteButton: true,
   },

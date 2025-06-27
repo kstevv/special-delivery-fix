@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.sdpresents.com
+
+# Sitemaps
+Sitemap: https://www.sdpresents.com/sitemap.xml

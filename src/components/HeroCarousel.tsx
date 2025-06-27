@@ -85,65 +85,75 @@ export default function HeroCarousel() {
           >
             <img
               src={image.src}
-              alt={image.title || 'Slide image'}
+              alt={image.alt || 'Slide image'}
               className="w-full h-full object-cover"
             />
 
+            {/* Caption Overlay */}
             <div className="absolute inset-0 flex items-end justify-center px-4 pb-1 sm:pb-12">
-              <div className="w-full max-w-7xl mx-auto relative">
-                {/* ✅ Mobile layout with blur overlay behind content */}
-                {isMobile && (image.title || image.description) && (
-                  <div className="md:hidden relative w-full max-w-sm mx-auto px-4 z-10">
-                    {/* Background blur layer */}
-                    <div
-                      className="absolute bottom-0 left-0 right-0 h-[140px] z-[-1] rounded-lg"
+              <div className="max-w-7xl mx-auto relative w-full">
+                {/* ✅ Mobile-only: blurred background with content */}
+                
+ {isMobile && (image.ticketUrl || image.websiteUrl || image.title || image.description) && (
+  <div className="md:hidden relative w-full max-w-xs mx-auto px-4 z-10 pt-6 pb-6">
+    
+    {/* Conditional blur only if there's text */}
+    {(image.title || image.description) && (
+      <div
+                      className="absolute bottom-0 left-0 right-0 h-[165px] max-w z-[-1] rounded-lg"
                       style={{
                         backgroundColor: 'rgba(0, 0, 0, 0.4)',
                         WebkitBackdropFilter: 'blur(8px)',
                         backdropFilter: 'blur(8px)',
                       }}
                     />
-                    {/* Foreground text/buttons */}
-                    <div className="relative pt-3 pb-3">
-                      {image.title && (
-                        <h2 className="text-white text-4xl font-bold mb-2 text-center uppercase">
-                          {image.title}
-                        </h2>
-                      )}
-                      {image.description && (
-                        <p className="text-white drop-shadow-md text-sm sm:text-base mb-4 text-center">
-                          {image.description}
-                        </p>
-                      )}
-                      <div className="flex justify-center gap-4">
-                        {image.ticketUrl && (
-                          <Link
-                            href={image.ticketUrl}
-                            className="bg-[#0071e3] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold transition"
-                          >
-                            Buy Tickets
-                          </Link>
-                        )}
-                        {image.showWebsiteButton && image.websiteUrl && (
-                          <Link
-                            href={image.websiteUrl}
-                            className="bg-[#0071e3] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold transition"
-                          >
-                            Visit Website
-                          </Link>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                )}
+    )}
 
-                {/* ✅ Mobile fallback: buttons only */}
-                {!image.title && !image.description && isMobile && (
-                  <div className="sm:hidden relative z-10 w-full max-w-md mx-auto px-4 py-4 flex justify-center gap-4">
+    <div>
+      {image.title && (
+        <h2 className="text-white text-4xl font-bold text-center uppercase mb-2">
+          {image.title}
+        </h2>
+      )}
+      {image.description && (
+        <p className="text-white drop-shadow-md text-sm sm:text-base mb-4 text-center">
+          {image.description}
+        </p>
+      )}
+
+      {(image.ticketUrl || image.websiteUrl) && (
+        <div className="flex justify-center gap-4">
+          {image.ticketUrl && (
+            <Link
+              href={image.ticketUrl}
+              className="bg-[#0071e3] hover:bg-blue-600 text-white px-4 py-2 rounded-md text-base font-semibold transition whitespace-nowrap"
+            >
+              Buy Tickets
+            </Link>
+          )}
+          {image.showWebsiteButton && image.websiteUrl && (
+            <Link
+              href={image.websiteUrl}
+              className="bg-[#0071e3] hover:bg-blue-600 text-white px-4 py-2 rounded-md text-base font-semibold transition whitespace-nowrap"
+            >
+              Visit Website
+            </Link>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+)}
+
+
+
+                {/* ✅ Desktop-only: bottom-left buttons */}
+                {!isMobile && (image.ticketUrl || (image.showWebsiteButton && image.websiteUrl)) && (
+                  <div className="hidden md:flex gap-4 absolute bottom-6 left-6 z-10">
                     {image.ticketUrl && (
                       <Link
                         href={image.ticketUrl}
-                        className="bg-[#0071e3] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold transition"
+                        className="bg-[#0071e3] hover:bg-blue-600 text-white px-6 py-3 rounded text-sm font-semibold transition"
                       >
                         Buy Tickets
                       </Link>
@@ -151,48 +161,22 @@ export default function HeroCarousel() {
                     {image.showWebsiteButton && image.websiteUrl && (
                       <Link
                         href={image.websiteUrl}
-                        className="bg-[#0071e3] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold transition"
+                        className="bg-[#0071e3] hover:bg-blue-600 text-white px-6 py-3 rounded text-sm font-semibold transition"
                       >
                         Visit Website
                       </Link>
                     )}
                   </div>
                 )}
-
-                {/* ✅ Desktop layout with no blur */}
-                <div className="hidden sm:flex flex-col gap-4 text-left z-10 px-6">
-                  {image.title && (
-                    <h2 className="text-white text-4xl font-bold">{image.title}</h2>
-                  )}
-                  {image.description && (
-                    <p className="text-white text-base">{image.description}</p>
-                  )}
-                  <div className="flex flex-row gap-4">
-                    {image.ticketUrl && (
-                      <Link
-                        href={image.ticketUrl}
-                        className="bg-[#0071e3] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold transition"
-                      >
-                        Buy Tickets
-                      </Link>
-                    )}
-                    {image.showWebsiteButton && image.websiteUrl && (
-                      <Link
-                        href={image.websiteUrl}
-                        className="bg-[#0071e3] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold transition"
-                      >
-                        Visit Website
-                      </Link>
-                    )}
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* ✅ Control Bar */}
+      
+
+      {/* Control Bar */}
       <div className="mt-4 flex items-center justify-center gap-4 text-white">
         <button onClick={prevSlide} className="text-black dark:text-white p-2 rounded">
           <ChevronLeft size={24} />

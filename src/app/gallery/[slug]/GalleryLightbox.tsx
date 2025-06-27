@@ -29,14 +29,14 @@ export default function GalleryLightbox({ images, title }: Props) {
               setOpen(true);
               setIndex(i);
             }}
-            className="relative aspect-[4/3] overflow-hidden rounded group"
+            className="overflow-hidden rounded"
           >
             <Image
               src={img}
               alt={`${title} photo ${i + 1}`}
-              fill
-              className="object-cover transition"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+              width={400}
+              height={300}
+              className="object-cover w-full h-auto transition"
             />
           </button>
         ))}

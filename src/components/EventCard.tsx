@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { EventType, EventVariant } from '../types';
+import { formatLocalDate } from '../lib/formatDate';
 
 interface EventCardProps {
   event: EventType;
@@ -13,12 +14,6 @@ export default function EventCard({
   buttonLabel = 'Buy Tickets',
   variant = 'default',
 }: EventCardProps) {
-  const formattedDate = new Date(event.date + 'T00:00:00').toLocaleDateString(undefined, {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
 
   const cardContent = (
     <div
@@ -33,7 +28,7 @@ export default function EventCard({
         <h3 className="text-lg font-bold text-gray-900 dark:text-white">{event.title}</h3>
 
         {variant !== 'festival' && (
-          <p className="text-sm text-gray-600 dark:text-gray-400">{formattedDate}</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">{formatLocalDate(event.date)}</p>
         )}
 
         {(variant === 'default' || variant === 'event') && (
