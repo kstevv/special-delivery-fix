@@ -12,6 +12,9 @@ import Lightbox from 'yet-another-react-lightbox';
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import 'yet-another-react-lightbox/plugins/zoom.css';
+
 
 interface GalleryDetailProps {
   gallery: {
@@ -94,7 +97,7 @@ export default function GalleryDetail({ gallery }: GalleryDetailProps) {
         on={{
           view: ({ index }) => setCurrentIndex(index),
         }}
-        plugins={[Fullscreen, Thumbnails]}
+        plugins={[Fullscreen, Thumbnails, Zoom]}
         controller={{ ref: lightboxRef }}
         render={{
           slide: NextJsImage,

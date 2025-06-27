@@ -95,7 +95,7 @@ export default function HeroCarousel() {
                 {/* ✅ Mobile-only: blurred background with content */}
                 
  {isMobile && (image.ticketUrl || image.websiteUrl || image.title || image.description) && (
-  <div className="md:hidden relative w-full max-w-xs mx-auto px-4 z-10 pt-6 pb-6">
+  <div className="md:hidden relative w-full max-w-xs mx-auto px-4 z-10 pt-4 pb-4">
     
     {/* Conditional blur only if there's text */}
     {(image.title || image.description) && (
