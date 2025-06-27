@@ -98,7 +98,14 @@ export default function HeroCarousel() {
                {(image.title || image.description) ? (
   <div className="md:hidden relative z-10 w-full max-w-sm mx-auto px-4">
     {/* Background blur */}
-    <div className="absolute inset-0 h-full backdrop-blur-sm bg-black/40 rounded-lg z-0 pointer-events-none" />
+    
+      <div 
+      className="absolute inset-0 h-full backdrop-blur-sm bg-black/40 rounded-lg z-0 pointer-events-none" 
+      style={{
+        willChange: 'transform',
+        transform: 'translateZ(0)',
+    }}
+      />
 
     {/* Foreground content */}
     <div className="relative z-10 pt-3 pb-3">
