@@ -99,11 +99,14 @@ export default function HeroCarousel() {
   <div className="md:hidden relative z-10 w-full max-w-sm mx-auto px-4">
     {/* Background blur */}
           <div 
-      className="absolute inset-0 h-full backdrop-blur-sm bg-black/40 rounded-lg z-0 pointer-events-none transition-none" 
+      className="absolute inset-0 z-0 rounded-lg" 
       style={{
-        willChange: 'transform',
-        transform: 'translateZ(0)',
-    }}
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    backdropFilter: 'blur(6px)',
+    WebkitBackdropFilter: 'blur(6px)',
+    willChange: 'transform',
+    transform: 'translateZ(0)',
+  }}
       />
 
     {/* Foreground content */}
