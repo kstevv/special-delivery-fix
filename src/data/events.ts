@@ -60,7 +60,7 @@ const events = [
       venue: "Deep Ellum Art Co.",
       image: "/images/lumasi-dtx-25.jpg",
       description: "Lumasi's Eclipse Tour ft. Milano Fika",
-      ticketUrl: ""
+      ticketUrl: "https://www.etix.com/ticket/p/95983475/lumasi-eclipse-tour-dallas-deep-ellum-art-co-sd-presents"
     },
     {
       title: "Muzz",
@@ -74,11 +74,11 @@ const events = [
     {
       title: "Lumasi",
       date: "2025-08-30",
-      location: "Dallas, TX",
-      venue: "Deep Ellum Art Co.",
-      image: "/images/lumasi-dtx-25.jpg",
+      location: "Austin, TX",
+      venue: "Vulcan Gas Company",
+      image: "/images/lumasi-atx-25.jpg",
       description: "Lumasi's Eclipse Tour ft. Milano Fika",
-      ticketUrl: ""
+      ticketUrl: "https://www.etix.com/ticket/p/78303579/lumasi-eclipse-tour-austin-vulcan-gas-co-sd-presents"
     },
     {
       title: "Galantis",

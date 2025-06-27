@@ -1,8 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import Masonry from 'react-masonry-css';
-import useInView from '../hooks/useInView';
+import Image from 'next/image';
 
 interface Props {
   images: string[];
@@ -10,70 +9,39 @@ interface Props {
   onImageClick: (index: number) => void;
 }
 
-const breakpointColumnsObj = {
-  default: 3,
-  1024: 3,
-  768: 2,
-  0: 2,
-};
-
 export default function GalleryLightboxWrapper({ images, title, onImageClick }: Props) {
+  const breakpointColumnsObj = {
+    default: 3,
+    1280: 3,
+    768: 2,
+    0: 1,
+  };
+
   return (
     <Masonry
       breakpointCols={breakpointColumnsObj}
-      className="my-masonry-grid"
-      columnClassName="my-masonry-grid_column"
+      className="masonry-grid"
+      columnClassName="masonry-column space-y-4"
     >
-      {images.map((img, i) => {
-  const { ref, isInView } = useInView();
-
-  const handleRipple = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    const target = e.currentTarget;
-    const circle = document.createElement('span');
-    const diameter = Math.max(target.clientWidth, target.clientHeight);
-    const radius = diameter / 2;
-
-    circle.classList.add('ripple');
-    circle.style.width = circle.style.height = `${diameter}px`;
-    circle.style.left = `${e.clientX - target.getBoundingClientRect().left - radius}px`;
-    circle.style.top = `${e.clientY - target.getBoundingClientRect().top - radius}px`;
-
-    target.appendChild(circle);
-
-    setTimeout(() => {
-      circle.remove();
-    }, 600);
-  };
-        return (
-          <div
-            key={i}
-            ref={ref}
-            className={`transition-all duration-700 ease-out transform mb-6 ${
-              isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ transitionDelay: `${i * 100}ms` }}
-          >
-            <div className="ripple-container overflow-hidden rounded-lg border border-white/10 shadow-md hover:shadow-lg transition-shadow mb-4 w-full h-auto cursor-zoom-in"
-            onClick={(e) => {
-          handleRipple(e);
-          onImageClick(i);
-        }}
+      {images.map((src, i) => (
+        <div
+          key={i}
+          onClick={() => onImageClick(i)}
+          className="mb-4 cursor-pointer"
+          data-aos="fade-up"
+          data-aos-delay={(i % 6) * 100}
         >
           <Image
-            src={img}
+            src={src}
             alt={`${title} photo ${i + 1}`}
             width={600}
             height={400}
-            className="w-full h-auto object-cover rounded-md cursor-zoom-in hover:scale-105 transition-opacity duration-300 hover:opacity-90"
-            onClick={() => onImageClick(i)}
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            priority={i < 3}
-            loading={i < 3 ? undefined : 'lazy'}
-         />
-         </div>
-          </div>
-        );
-      })}
+            className="rounded-lg w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+          />
+        </div>
+      ))}
     </Masonry>
   );
 }

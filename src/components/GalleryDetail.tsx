@@ -1,8 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { useRef } from 'react';
 import type { ControllerRef } from 'yet-another-react-lightbox';
 import GalleryLightboxWrapper from './GalleryLightboxWrapper';
 import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
@@ -10,10 +9,11 @@ import BackButton from './BackButton';
 import { formatLocalDate } from '../lib/formatDate';
 import Lightbox from 'yet-another-react-lightbox';
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
-import Zoom from 'yet-another-react-lightbox/plugins/zoom';
-
 
 interface GalleryDetailProps {
   gallery: {
@@ -43,7 +43,10 @@ export default function GalleryDetail({ gallery }: GalleryDetailProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const lightboxRef = useRef<ControllerRef>(null);
-  
+
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
 
   const structuredData = {
     '@context': 'https://schema.org',
@@ -57,13 +60,11 @@ export default function GalleryDetail({ gallery }: GalleryDetailProps) {
   };
 
   const slides = gallery.images.map((src) => ({
-  src,
-  width: 1200,
-  height: 800,
-  alt: `${gallery.title} photo`,
-}));
-
-
+    src,
+    width: 1200,
+    height: 800,
+    alt: `${gallery.title} photo`,
+  }));
 
   return (
     <main className="px-6 py-12 max-w-7xl mx-auto" aria-labelledby="gallery-title">
@@ -93,9 +94,7 @@ export default function GalleryDetail({ gallery }: GalleryDetailProps) {
         close={() => setLightboxOpen(false)}
         slides={slides}
         index={currentIndex}
-        on={{
-          view: ({ index }) => setCurrentIndex(index),
-        }}
+        on={{ view: ({ index }) => setCurrentIndex(index) }}
         plugins={[Fullscreen, Thumbnails, Zoom]}
         controller={{ ref: lightboxRef }}
         render={{
@@ -107,44 +106,40 @@ export default function GalleryDetail({ gallery }: GalleryDetailProps) {
                 alt={slide.alt || ''}
                 width={120}
                 height={80}
+                loading="lazy"
                 className="object-cover rounded-md transition-transform duration-200 hover:scale-105"
               />
             </div>
           ),
           controls: () => (
-  <div className="absolute bottom-[20px] left-1/2 -translate-x-1/2 z-[9999] flex items-center gap-4 px-4 py-2 bg-black/70 rounded-md text-white text-sm shadow">
-    <button
-      onClick={(e) => {
-        e.stopPropagation();
-        lightboxRef.current?.prev();
-      }}
-      aria-label="Previous slide"
-      className="cursor-pointer focus:outline-none focus:ring-0"
-    >
-      <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">
-        <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-      </svg>
-    </button>
-
-    <span className="min-w-[60px] text-center select-none">
-      {currentIndex + 1} / {slides.length}
-    </span>
-
-    <button 
-      onClick={(e) => {
-        e.stopPropagation();
-        lightboxRef.current?.next();
-      }}
-      aria-label="Next slide"
-      className="cursor-pointer focus:outline-none focus:ring-0"
-    >
-      <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">
-        <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" />
-      </svg>
-    </button>
-  </div>
-),
-
+            <div className="absolute bottom-[20px] left-1/2 -translate-x-1/2 z-[9999] flex items-center gap-4 px-4 py-2 bg-black/70 rounded-md text-white text-sm shadow">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  lightboxRef.current?.prev();
+                }}
+                aria-label="Previous slide"
+              >
+                <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">
+                  <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                </svg>
+              </button>
+              <span className="min-w-[60px] text-center select-none">
+                {currentIndex + 1} / {slides.length}
+              </span>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  lightboxRef.current?.next();
+                }}
+                aria-label="Next slide"
+              >
+                <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">
+                  <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+                </svg>
+              </button>
+            </div>
+          ),
         }}
       />
 

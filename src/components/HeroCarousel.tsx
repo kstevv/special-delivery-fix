@@ -98,16 +98,17 @@ export default function HeroCarousel() {
   <div className="md:hidden relative w-full max-w-xs mx-auto px-4 z-10 pt-0 pb-4">
     
     {/* Conditional blur only if there's text */}
-    {(image.title || image.description) && (
-      <div
-                      className="absolute bottom-0 left-0 right-0 h-[160px] max-w z-[-1] rounded-lg"
-                      style={{
-                        backgroundColor: 'rgba(0, 0, 0, 0.4)',
-                        WebkitBackdropFilter: 'blur(8px)',
-                        backdropFilter: 'blur(8px)',
-                      }}
-                    />
-    )}
+   {(image.title || image.description) && (
+  <div
+    className="absolute bottom-0 left-0 right-0 h-[160px] z-[-1] rounded-lg"
+    style={{
+      backgroundColor: 'rgba(0, 0, 0, 0.4)',
+      WebkitBackdropFilter: 'blur(8px)',
+      backdropFilter: 'blur(8px)',
+    }}
+  />
+)}
+
 
     <div>
       {image.title && (

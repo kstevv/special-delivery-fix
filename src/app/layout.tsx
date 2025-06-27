@@ -3,6 +3,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { ThemeProvider } from 'next-themes';
 import type { Metadata } from 'next';
+import 'aos/dist/aos.css';
+import ClientWrapper from '../components/ClientWrapper';
 
 export const metadata: Metadata = {
   title: 'Special Delivery Presents | Events and Festivals',
@@ -94,9 +96,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
       <body className="bg-white text-black dark:bg-black dark:text-white min-h-screen flex flex-col">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+            <ClientWrapper>
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
+          </ClientWrapper>
         </ThemeProvider>
       </body>
     </html>

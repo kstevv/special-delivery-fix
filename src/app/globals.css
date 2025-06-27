@@ -16,6 +16,18 @@ html {
   padding-right: 2.5rem;
 }
 
+/* Masonry layout fixes */
+.masonry-grid {
+  display: flex;
+  margin-left: -16px; /* gutter offset */
+  width: auto;
+}
+
+.masonry-column {
+  padding-left: 16px; /* gutter size */
+  background-clip: padding-box;
+}
+
 .my-masonry-grid {
   display: -webkit-box; /* Needed for old Safari */
   display: -ms-flexbox;
