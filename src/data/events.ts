@@ -27,6 +27,15 @@ const events = [
       ticketUrl: "https://wl.seetickets.us/event/Freakazoid-Robots-ft-Trivecta-MitiS-and-MORE-DALLAS/652647?afflky=SILO"
     },
     {
+      title: "jaenga",
+      date: "2025-08-15",
+      location: "Dallas, TX",
+      venue: "Deep Ellum Art Co.",
+      image: "/images/jaenga-dtx-25.jpg",
+      description: "",
+      ticketUrl: "https://www.etix.com/ticket/p/87895949/jaenga-dream-machine-tour-dtx-dallas-deep-ellum-art-co-sd-presents"
+    },
+    {
       title: "ARMNHMR",
       date: "2025-08-15",
       location: "Austin, TX",
@@ -36,6 +45,24 @@ const events = [
       ticketUrl: "https://wl.seetickets.us/event/ARMNHMR-AUSTIN/651286?afflky=DiscoDonnie"
     },
     {
+      title: "jaenga",
+      date: "2025-08-16",
+      location: "Austin, TX",
+      venue: "Vulcan Gas Company",
+      image: "/images/jaenga-atx-25.jpg",
+      description: "",
+      ticketUrl: "https://www.etix.com/ticket/p/85716283/jeanga-dream-machine-tour-atx-austin-vulcan-gas-co-sd-presents"
+    },
+    {
+      title: "Lumasi",
+      date: "2025-08-29",
+      location: "Dallas, TX",
+      venue: "Deep Ellum Art Co.",
+      image: "/images/lumasi-dtx-25.jpg",
+      description: "Lumasi's Eclipse Tour ft. Milano Fika",
+      ticketUrl: ""
+    },
+    {
       title: "Muzz",
       date: "2025-08-29",
       location: "Austin, TX",
@@ -43,6 +70,15 @@ const events = [
       image: "/images/muzz-atx-25.jpg",
       description: "Special Delivery Presents: Muzz @ Vulcan Gas Company on 8/29/25",
       ticketUrl: "https://www.etix.com/ticket/p/40220978/special-delivery-presentsmuzz-austin-vulcan-gas-co-sd-presents?eventref=fb_oea&fbclid=IwY2xjawKpswFleHRuA2FlbQIxMABicmlkETFJRVA0TUc5V1ZVM0VGQVFtAR68lyTFULc0aFKxj4LgWI5P_ayUojnlswfM-3zRoZ16Shi5t34rbLJ_06T8RA_aem_svIRi1keAZpnpQ0yIMJACg"
+    },
+    {
+      title: "Lumasi",
+      date: "2025-08-30",
+      location: "Dallas, TX",
+      venue: "Deep Ellum Art Co.",
+      image: "/images/lumasi-dtx-25.jpg",
+      description: "Lumasi's Eclipse Tour ft. Milano Fika",
+      ticketUrl: ""
     },
     {
       title: "Galantis",
@@ -72,6 +108,15 @@ const events = [
       ticketUrl: "https://www.etix.com/ticket/p/43343806/flowdan-austin-vulcan-gas-co-sd-presents"
     },
     {
+      title: "YDG",
+      date: "2025-09-06",
+      location: "San Marcos, TX",
+      venue: "The Marc",
+      image: "/images/ydg-sm-25.jpg",
+      description: "You + Me Forever Tour ft. Bella Renee",
+      ticketUrl: "https://www.etix.com/ticket/p/97093528/ydg-you-me-forever-tour-san-marcos-the-marc-sd-presents"
+    },
+    {
       title: "Zen Selekta",
       date: "2025-09-12",
       location: "San Marcos, TX",
@@ -79,6 +124,15 @@ const events = [
       image: "/images/zen-selekta-san-marcos-25.jpg",
       description: "FREE RSVP: Zen Selekta at The Marc on 9/12/25",
       ticketUrl: "https://wl.seetickets.us/event/912-or-free-rsvp-zen-selekta-at-the-marc-or-san-marcos-tx/648224?afflky=TheMarc&fbclid=IwY2xjawKptQ1leHRuA2FlbQIxMABicmlkETFJRVA0TUc5V1ZVM0VGQVFtAR4wbdeLVReWv9mifHtK8difSHhzXGWhVwAK4kfGJCKrVYmHrB-wFiQhJI-GUA_aem_oO-E4SiLGtPYYudK9BVArQ"
+    },
+    {
+      title: "YDG",
+      date: "2025-09-13",
+      location: "Dallas, TX",
+      venue: "Deep Ellum Art Co.",
+      image: "/images/ydg-dtx-25.jpg",
+      description: "You + Me Forever Tour ft. Bella Renee",
+      ticketUrl: "https://www.etix.com/ticket/p/88651139/ydg-you-me-forever-tour-dallas-deep-ellum-art-co-sd-presents"
     },
     {
       title: "Zen Selekta",
@@ -115,6 +169,15 @@ const events = [
       image: "/images/vastive-dtx-25.jpg",
       description: "",
       ticketUrl: "https://www.etix.com/ticket/p/78559813/vastive-new-levels-new-devils-tour-dallas-the-green-elephant-sd-presents?laylo-fid=634e45a10f774fc383cbcd0d3504e87c&laylo-pid=4b306d62-3410-4dbf-a72a-3a726ddcad84"
+    },
+    {
+      title: "YDG",
+      date: "2025-11-08",
+      location: "Houston, TX",
+      venue: "9PM Music Venue",
+      image: "/images/ydg-htx-25.jpg",
+      description: "You + Me Forever Tour ft. Bella Renee",
+      ticketUrl: "https://www.etix.com/ticket/p/98262423/ydg-you-me-forever-tour-htx-houston-9pm-presents-houstontx-sd-presents"
     },
     {
       title: "Heyz",

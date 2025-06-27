@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { desktopImages, mobileImages } from '../data/heroCarouselImages';
+
 
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);
@@ -40,6 +40,7 @@ export default function HeroCarousel() {
     const handleTouchStart = (e: TouchEvent) => {
       startXRef.current = e.touches[0].clientX;
     };
+
     const handleTouchEnd = (e: TouchEvent) => {
       if (startXRef.current === null) return;
       const endX = e.changedTouches[0].clientX;
@@ -48,6 +49,7 @@ export default function HeroCarousel() {
       else if (diff < -50) prevSlide();
       startXRef.current = null;
     };
+
     const node = carouselRef.current;
     if (node) {
       node.addEventListener('touchstart', handleTouchStart);
@@ -70,6 +72,8 @@ export default function HeroCarousel() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+
+
   return (
     <div className="relative w-full overflow-hidden mb-6" ref={carouselRef}>
       {/* Slides */}
@@ -78,26 +82,98 @@ export default function HeroCarousel() {
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {images.map((image, i) => (
-          <div key={i} className="w-full flex-shrink-0 h-[400px] sm:h-[500px] md:h-[600px] relative">
-            <Image
+          <div
+            key={i}
+            className="w-full flex-shrink-0 h-[400px] sm:h-[500px] md:h-[600px] relative"
+          >
+            <img
               src={image.src}
-              alt={image.alt || 'Event image'}
-              fill
-              className="object-cover"
-              priority={i === 0}
-              sizes="100vw"
+              alt={image.title || 'Slide image'}
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex items-end justify-center">
-              <div className="w-full max-w-7xl mx-auto px-6 pb-6 sm:pb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between text-center sm:text-left">
-                <div>
-                  <h2 className="text-white text-4xl font-bold mb-2">{image.title}</h2>
-                  <div className="flex flex-row gap-4 justify-center sm:justify-start">
-                    <Link
-                      href={image.ticketUrl}
-                      className="bg-[#0071e3] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold transition"
-                    >
-                      Buy Tickets
-                    </Link>
+
+            <div className="absolute inset-0 flex items-end justify-center px-4 pb-1 sm:pb-12">
+              <div className="w-full max-w-7xl mx-auto relative">
+               {/* Mobile layout with blur */}
+               {(image.title || image.description) ? (
+  <div className="md:hidden relative z-10 w-full max-w-sm mx-auto px-4">
+    {/* Background blur */}
+    <div className="absolute inset-0 h-full backdrop-blur-sm bg-black/40 rounded-lg z-0 pointer-events-none" />
+
+    {/* Foreground content */}
+    <div className="relative z-10 pt-3 pb-3">
+      {image.title && (
+        <h2 className="text-white text-4xl font-bold mb-2 text-center uppercase">
+          {image.title}
+        </h2>
+      )}
+      {image.description && (
+        <p className="text-white drop-shadow-md text-sm sm:text-base mb-4 text-center">
+          {image.description}
+        </p>
+      )}
+      <div className="flex justify-center gap-4">
+        {image.ticketUrl && (
+          <Link
+            href={image.ticketUrl}
+            className="bg-[#0071e3] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold transition"
+          >
+            Buy Tickets
+          </Link>
+        )}
+        {image.showWebsiteButton && image.websiteUrl && (
+          <Link
+            href={image.websiteUrl}
+            className="bg-[#0071e3] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold transition"
+          >
+            Visit Website
+          </Link>
+        )}
+      </div>
+    </div>
+  </div>
+
+) : (
+  // Mobile fallback: just buttons
+  (image.ticketUrl || (image.showWebsiteButton && image.websiteUrl)) && (
+    <div className="sm:hidden relative z-10 w-full max-w-md mx-auto px-4 py-4 flex justify-center gap-4">
+      {image.ticketUrl && (
+        <Link
+          href={image.ticketUrl}
+          className="bg-[#0071e3] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold transition"
+        >
+          Buy Tickets
+        </Link>
+      )}
+      {image.showWebsiteButton && image.websiteUrl && (
+        <Link
+          href={image.websiteUrl}
+          className="bg-[#0071e3] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold transition"
+        >
+          Visit Website
+        </Link>
+      )}
+    </div>
+  )
+)}
+
+                {/* Desktop layout: left-aligned, no blur */}
+                <div className="hidden sm:flex flex-col gap-4 text-left z-10 px-6">
+                  {image.title && (
+                    <h2 className="text-white text-4xl font-bold">{image.title}</h2>
+                  )}
+                  {image.description && (
+                    <p className="text-white text-base">{image.description}</p>
+                  )}
+                  <div className="flex flex-row gap-4">
+                    {image.ticketUrl && (
+                      <Link
+                        href={image.ticketUrl}
+                        className="bg-[#0071e3] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold transition"
+                      >
+                        Buy Tickets
+                      </Link>
+                    )}
                     {image.showWebsiteButton && image.websiteUrl && (
                       <Link
                         href={image.websiteUrl}

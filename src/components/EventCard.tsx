@@ -42,7 +42,7 @@ export default function EventCard({
               {event.location} - {event.venue}
             </p>
             {event.ticketUrl && (
-              <Link href={event.ticketUrl} target="_blank" rel="noopener noreferrer">
+              <Link href={event.ticketUrl} rel="noopener noreferrer">
                 <span className="mt-4 inline-block bg-[#0071e3] text-white font-bold px-4 py-2 rounded hover:bg-blue-600 transition">
                   {buttonLabel}
                 </span>
@@ -62,7 +62,6 @@ export default function EventCard({
     return (
       <a
         href={event.ticketUrl}
-        target="_blank"
         rel="noopener noreferrer"
         className="block no-underline"
       >

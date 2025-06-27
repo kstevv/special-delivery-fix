@@ -69,7 +69,7 @@ export default function ContactForm() {
               name="email"
               required
               className="mt-2 w-full dark:bg-black border border-gray-600 rounded-xl py-3 px-4"
-              placeholder="your@email.com"
+              placeholder="Your@email.com"
             />
           </div>
 
