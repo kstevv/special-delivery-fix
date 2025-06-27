@@ -101,12 +101,13 @@ export default function HeroCarousel() {
           <div 
       className="absolute inset-0 z-0 rounded-lg" 
       style={{
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
-    backdropFilter: 'blur(6px)',
-    WebkitBackdropFilter: 'blur(6px)',
-    willChange: 'transform',
-    transform: 'translateZ(0)',
-  }}
+      backgroundColor: 'rgba(0, 0, 0, 0.4)',
+      WebkitBackdropFilter: 'blur(8px)',
+      backdropFilter: 'blur(8px)',
+      transform: 'translateZ(0)',
+      willChange: 'transform',
+      transition: 'none',
+    }}
       />
 
     {/* Foreground content */}
